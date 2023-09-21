@@ -2,15 +2,19 @@ import { NextApiResponse, NextApiRequest } from 'next';
 import prisma from '@/libs/prisma';
 
 export default async function getUser(req: NextApiRequest, res: NextApiResponse) {
-  const user = await prisma.users.findMany({
-    select: {
-      id: true,
-      createdAt: true,
-      email: true,
-      name: true,
-      photo: true,
-    }
-  })
+  if (req.method === 'POST') {
+    console.log('post something');
+  } else if (req.method === 'GET') {
+    const user = await prisma.users.findMany({
+      select: {
+        id: true,
+        createdAt: true,
+        email: true,
+        name: true,
+        photo: true,
+      }
+    })
+    res.json(user)
+  }
   
-  res.json(user)
 }

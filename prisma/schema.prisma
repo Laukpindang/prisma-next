@@ -15,3 +15,11 @@ model users {
   password  String
   photo     String?
 }
+
+model meme {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt DateTime @db.Date
+  name      String
+  photo     String
+  author  String
+}

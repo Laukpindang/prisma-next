@@ -12,9 +12,8 @@ export default async function getUser(req: NextApiRequest, res: NextApiResponse)
         email: true,
         name: true,
         photo: true,
-      }
-    })
-    res.json(user)
+      },
+    });
+    res.json(user);
   }
-  
 }

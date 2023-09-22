@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 export const Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = ({
   onChange,
   value,
   type = 'text',
-  className = ''
+  className = '',
 }) => {
   return (
     <input
@@ -13,5 +13,5 @@ export const Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = ({
       value={value}
       className={`rounded-md border-2 border-black focus:border-red-800 hover:border-red-800 ${className}`}
     />
-  )
-}
+  );
+};

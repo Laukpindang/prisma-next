@@ -1,12 +1,16 @@
 import Head from 'next/head';
 import { useListUser } from '@/hooks/user';
 import { UserResponse } from '@/types/user';
+import { useMeme } from '@/hooks/meme';
 import { useRouter } from 'next/router';
 import { Card } from '@/components/card';
 
 export default function Home() {
   const { data, isLoading, error } = useListUser();
+  const { data: memeList } = useMeme();
   const router = useRouter();
+
+  console.log(memeList);
 
   return (
     <>

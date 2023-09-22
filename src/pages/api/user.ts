@@ -14,6 +14,6 @@ export default async function getUser(req: NextApiRequest, res: NextApiResponse)
         photo: true,
       },
     });
-    res.json(user);
+    res.status(200).json(user);
   }
 }
